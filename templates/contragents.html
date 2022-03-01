@@ -9,4 +9,24 @@
 </ul>
 <hr>
 <h1>Список контрагентов</h1>
+
+<table>
+    <tr>
+    <th>№ п/п</th>
+    <th>Код контрагента</th>
+    <th>Наименование</th>
+    <th>ИНН</th>
+    <th>КПП</th>
+    </tr>
+    {% for item in items %}
+    <tr>
+    <th><a href="/settings/contragent/{{ item.id}}">{{ item.id}}</a></th>
+    <th>{{ item.code}}</th>
+    <th>{{ item.name}}</th>
+    <th>{{ item.inn}}</th>
+    {% if kpp=null %}
+    <th>{{ item.kpp}}</th>
+    </tr>
+    {% endfor %}
+</table>
 {% endblock %}

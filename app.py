@@ -2,7 +2,6 @@ from flask import Flask, render_template, request, flash, abort, redirect, jsoni
 from sqlalchemy.orm import scoped_session, sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 from config import engine
-import bs4
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'fdgdfgdfggf786hfg6hfg6h7f'
@@ -13,8 +12,8 @@ Base.query = session.query_property()
 
 from models import *
 
-
 Base.metadata.create_all(bind=engine)
+
 
 # render_template-шаблонизатор во flask используется на основе jinja
 # flash() – формирование сообщения пользователю;
@@ -77,14 +76,24 @@ def login():
 def contragents():
     #     # Список контрагентов/Создание контрагентов
     if request.method == "POST":
-        session.add(
-            Contragent(code=request.json['code'],
-                       name=request.json['name'],
-                       inn=request.json['inn'],
-                       # kpp=request.json['kpp']
-                       ))
+        if 'kpp' not in request.json:
+            # Если КПП отсутсвтует, тогда это ИП и КПП не заполняется
+            session.add(
+                Contragent(code=request.json['code'],
+                           name=request.json['name'],
+                           inn=request.json['inn'],
+                           # kpp=request.json['kpp']
+                           ))
+        else:
+            session.add(
+                Contragent(code=request.json['code'],
+                           name=request.json['name'],
+                           inn=request.json['inn'],
+                           kpp=request.json['kpp']
+                           ))
         session.commit()
-    return render_template('contragents.html', title="Контрагенты")
+    return render_template('contragents.html', title="Контрагенты", items=Contragent.query.all())
+
 
 
 if __name__ == '__main__':

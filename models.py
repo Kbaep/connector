@@ -17,4 +17,4 @@ class Contragent(Base):
     code = db.Column(db.Integer, nullable=False, unique=True)
     name = db.Column(db.String(255), nullable=False)
     inn = db.Column(db.Integer, nullable=False)
-    # kpp = db.Column(db.Integer, default=0, nullable=False)
+    kpp = db.Column(db.Integer, default='null', nullable=False)
