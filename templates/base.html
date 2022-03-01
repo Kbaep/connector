@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+{% block title -%}
+{% if title %}
+         <title>{{title}}</title>
+{% else %}
+         <title>Коннектор</title>
+{% endif %}
+{% endblock %}
+</head>
+<body>
+<ul class="mainmenu">
+    <li><a href="/">Главная</a></li>
+    <li><a href="/settings/profiles">Настройки</a></li>
+</ul>
+<hr>
+{% block content -%}
+{% endblock -%}
+</body>
+</html>
