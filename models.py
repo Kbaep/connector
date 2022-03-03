@@ -17,4 +17,22 @@ class Contragent(Base):
     code = db.Column(db.Integer, nullable=False, unique=True)
     name = db.Column(db.String(255), nullable=False)
     inn = db.Column(db.Integer, nullable=False)
-    kpp = db.Column(db.Integer, default='null', nullable=False)
+    kpp = db.Column(db.Integer, nullable=True)
+    kpp1 = db.Column(db.Integer, nullable=True)
+
+class Point(Base):
+    __tablename__ = 'point'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(255), nullable=False)
+    gln = db.Column(db.Integer, nullable=False, unique=True)
+    inn = db.Column(db.Integer, nullable=False)
+    kpp = db.Column(db.Integer, nullable=False)
+    index = db.Column(db.Integer, nullable=True)
+    region_code = db.Column(db.Integer, nullable=True)
+    area = db.Column(db.Integer, nullable=True)
+    city = db.Column(db.Integer, nullable=True)
+    locality = db.Column(db.Integer, nullable=True)
+    side = db.Column(db.Integer, nullable=True)
+    house = db.Column(db.Integer, nullable=True)
+    frame = db.Column(db.Integer, nullable=True)
+    flat = db.Column(db.Integer, nullable=True)

@@ -76,24 +76,61 @@ def login():
 def contragents():
     #     # Список контрагентов/Создание контрагентов
     if request.method == "POST":
-        if 'kpp' not in request.json:
-            # Если КПП отсутсвтует, тогда это ИП и КПП не заполняется
-            session.add(
-                Contragent(code=request.json['code'],
-                           name=request.json['name'],
-                           inn=request.json['inn'],
-                           # kpp=request.json['kpp']
-                           ))
-        else:
-            session.add(
-                Contragent(code=request.json['code'],
-                           name=request.json['name'],
-                           inn=request.json['inn'],
-                           kpp=request.json['kpp']
-                           ))
+        # if 'kpp' not in request.json:
+        # Если КПП отсутсвтует, тогда это ИП и КПП не заполняется
+        #     session.add(
+        #         Contragent(code=request.json['code'],
+        #                    name=request.json['name'],
+        #                    inn=request.json['inn'],
+        #                    # kpp=request.json['kpp']
+        #                    ))
+        # else:
+        #     session.add(
+        #         Contragent(code=request.json['code'],
+        #                    name=request.json['name'],
+        #                    inn=request.json['inn'],
+        #                    kpp=request.json['kpp']
+        #                    ))
+        # session.commit()
+        session.add(Contragent(**request.json))
         session.commit()
+        # print(type(request.json))
+        # contragent = ()
+        # for key in request.json:
+
+
     return render_template('contragents.html', title="Контрагенты", items=Contragent.query.all())
 
+
+@app.route('/settings/point/<int:id>')
+def point(id):
+    # Адрес точки
+    item = Profile.query.get(id)
+    return render_template('point.html', title="Точка", item=item)
+
+
+@app.route('/settings/points')
+def points():
+    # Список адресов
+    return render_template('points.html', title="Точки", items=Profile.query.all())
+
+
+@app.route('/settings/create_point', methods=["POST", "GET"])
+def create_point():
+    # Регистрация пользователя
+    print('create_point')
+    if request.method == "POST":
+        print(request.form)
+        session.add(
+            Profile(name=request.form['name'],
+                    surname=request.form['surname'],
+                    login=request.form['login'],
+                    password=request.form['password'],
+                    email=request.form['email']))
+        session.commit()
+        flash('Адрес точки зарегистрирован')
+        return redirect('/settings/points')
+    return render_template('create_point.html', title="Создание точки")
 
 
 if __name__ == '__main__':
