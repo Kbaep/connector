@@ -3,33 +3,33 @@
 {% block content %}
 <ul>
     <li><a href="/settings/profiles">Пользователи</a></li>
-    <li><a href="/settings/contragents">Контрагент</a></li>
-    <li><a href="/settings/Addresses">Адреса</a></li>
+    <li><a href="/settings/contragents">Контрагенты</a></li>
+    <li><a href="/settings/points">Адреса</a></li>
     <li><a href="/settings/business_parameters">Бизнес-параметры</a></li>
 </ul>
 <hr>
-<h1>Список пользователей</h1>
+<h1>Список Адресов</h1>
 {% for msg in get_flashed_messages() %}
 <div>{{msg}}</div>
 {% endfor %}
-<form action="http://127.0.0.1:5000/settings/create_profile">
-      <button type="submit">Создать пользователя</button>
-    </form>
+<form action="http://127.0.0.1:5000/settings/create_point">
+    <button type="submit">Создать адрес точки</button>
+</form>
 <table>
     <tr>
-    <th>№ п/п</th>
-    <th>Имя</th>
-    <th>Фамилия</th>
-    <th>Логин</th>
-    <th>Почта</th>
+        <th>№ п/п</th>
+        <th>Наименование</th>
+        <th>GLN</th>
+        <th>ИНН</th>
+        <th>КПП</th>
     </tr>
     {% for item in items %}
     <tr>
-    <th><a href="/settings/profile/{{ item.id}}">{{ item.id}}</a></th>
-    <th>{{ item.name}}</th>
-    <th>{{ item.surname}}</th>
-    <th>{{ item.login}}</th>
-    <th>{{ item.email}}</th>
+        <th><a href="/settings/point/{{ item.id}}">{{ item.id}}</a></th>
+        <th>{{ item.name}}</th>
+        <th>{{ item.gln}}</th>
+        <th>{{ item.inn}}</th>
+        <th>{{ item.kpp}}</th>
     </tr>
     {% endfor %}
 </table>

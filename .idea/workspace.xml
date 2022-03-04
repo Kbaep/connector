@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2f8ace5e-b4c0-4122-aa77-6c21767b1c9c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/create_point.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/point.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/points.html" afterDir="false" />
+    <list default="true" id="2f8ace5e-b4c0-4122-aa77-6c21767b1c9c" name="Default Changelist" comment="first commin">
+      <change beforePath="$PROJECT_DIR$/.idea/connector.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/connector.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/contragent.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contragent.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/contragents.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contragents.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/create_point.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/create_point.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/create_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/create_profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/point.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/point.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/points.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/points.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/profiles.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profiles.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,19 +27,9 @@
       </list>
     </option>
   </component>
-  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
-    <envs>
-      <env key="FLASK_APP" value="app" />
-    </envs>
-    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
-    <option name="myEnvs">
-      <map>
-        <entry key="FLASK_APP" value="app" />
-      </map>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="ProjectId" id="24H9FzSFEiFp71H76qppe4uTi20" />
   <component name="ProjectViewState">
@@ -50,25 +41,15 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\git\connector\templates" />
-      <recent name="C:\git\connector\templates\sss" />
-      <recent name="C:\git\connector" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\git\connector\templates" />
       <recent name="C:\git\connector" />
     </key>
   </component>
   <component name="RunManager" selected="Python.app">
-    <configuration name="create_profile.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/connector/templates/create_profile.html" useBuiltInWebServerPort="true">
-      <method v="2" />
-    </configuration>
-    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/connector/templates/index.html" useBuiltInWebServerPort="true">
+    <configuration name="points.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/connector/templates/points.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="app (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -118,8 +99,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.app" />
-        <item itemvalue="JavaScript Debug.index.html" />
-        <item itemvalue="JavaScript Debug.create_profile.html" />
+        <item itemvalue="JavaScript Debug.points.html" />
         <item itemvalue="Python.app (1)" />
       </list>
     </recent_temporary>
@@ -136,25 +116,6 @@
       <workItem from="1643975801415" duration="4605000" />
       <workItem from="1644050376660" duration="369000" />
       <workItem from="1644061145961" duration="9000" />
-      <workItem from="1644062122792" duration="118000" />
-      <workItem from="1644243963848" duration="1196000" />
-      <workItem from="1644306734102" duration="180000" />
-      <workItem from="1644306957715" duration="13399000" />
-      <workItem from="1644329953415" duration="648000" />
-      <workItem from="1644341845043" duration="3866000" />
-      <workItem from="1644397584035" duration="14173000" />
-      <workItem from="1644480134527" duration="1327000" />
-      <workItem from="1644481834955" duration="1054000" />
-      <workItem from="1644482949299" duration="1033000" />
-      <workItem from="1646155528338" duration="709000" />
-      <workItem from="1646158697145" duration="3518000" />
-      <workItem from="1646244384144" duration="274000" />
-      <workItem from="1646244800762" duration="3583000" />
-      <workItem from="1646289807146" duration="5809000" />
-      <workItem from="1646316768806" duration="38000" />
-      <workItem from="1646316832900" duration="73000" />
-      <workItem from="1646316928501" duration="109000" />
-      <workItem from="1646317092468" duration="99000" />
     </task>
     <task id="LOCAL-00001" summary="first commin">
       <created>1644050652123</created>
@@ -163,28 +124,7 @@
       <option name="project" value="LOCAL" />
       <updated>1644050652123</updated>
     </task>
-    <task id="LOCAL-00002" summary="first commin">
-      <created>1646155539379</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1646155539379</updated>
-    </task>
-    <task id="LOCAL-00003" summary="create contragents">
-      <created>1646161639541</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1646161639541</updated>
-    </task>
-    <task id="LOCAL-00004" summary="create contragents">
-      <created>1646244409189</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1646244409189</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,15 +140,13 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commin" />
-    <MESSAGE value="create contragents" />
-    <option name="LAST_COMMIT_MESSAGE" value="create contragents" />
+    <option name="LAST_COMMIT_MESSAGE" value="first commin" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/connector$app.coverage" NAME="app Coverage Results" MODIFIED="1646317099109" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/connector$app__1_.coverage" NAME="app (1) Coverage Results" MODIFIED="1643977618368" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/connec" />
+    <SUITE FILE_PATH="coverage/connector$app.coverage" NAME="app Coverage Results" MODIFIED="1646403944772" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

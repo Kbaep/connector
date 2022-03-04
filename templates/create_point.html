@@ -3,18 +3,26 @@
 {% block content %}
 <ul>
     <li><a href="/settings/profiles">Пользователи</a></li>
-    <li><a href="/settings/contragent">Контрагент</a></li>
-    <li><a href="/settings/Addresses">Адреса</a></li>
+    <li><a href="/settings/contragents">Контрагенты</a></li>
+    <li><a href="/settings/points">Адреса</a></li>
     <li><a href="/settings/business_parameters">Бизнес-параметры</a></li>
 </ul>
 <hr>
-<h1>Форма создания пользователей</h1>
-<form action="/settings/create_profile" method="post">
-    <p><label>Имя: </label> <input type="text" name="name" value="" requied/>
-    <p><label>Фамилия: </label> <input type="text" name="surname" value="" requied/>
-    <p><label>Логин: </label> <input type="text" name="login" value="" requied/>
-    <p><label>Пароль: </label> <input type="password" name="password" value="" requied/>
-    <p><label>Почта: </label> <input type="email" name="email" value="" requied/>
-    <p><input type="submit" value="Создать пользователя"/>
+<h1>Форма создания точки</h1>
+<form action="/settings/create_point" method="post">
+    <p><label>Наименование: </label> <input name="name" requied type="text" value=""/>
+    <p><label>GLN: </label> <input name="gln" requied type="text" value=""/>
+    <p><label>ИНН: </label> <input name="inn" requied type="text" value=""/>
+    <p><label>КПП: </label> <input name="kpp" requied type="text" value=""/>
+    <p><label>Индекс: </label> <input name="index" requied type="text" value=""/>
+    <p><label>Код региона: </label> <input name="region_code" requied type="text" value=""/>
+    <p><label>Район: </label> <input name="area" requied type="text" value=""/>
+    <p><label>Город: </label> <input name="city" requied type="text" value=""/>
+    <p><label>Населённый пункт: </label> <input name="locality" requied type="text" value=""/>
+    <p><label>Улица: </label> <input name="side" requied type="text" value=""/>
+    <p><label>Дом: </label> <input name="house" requied type="text" value=""/>
+    <p><label>Корпус: </label> <input name="frame" requied type="text" value=""/>
+    <p><label>Кварт: </label> <input name="flat" requied type="text" value=""/>
+    <p><input type="submit" value="Создать точку"/>
 </form>
 {% endblock %}

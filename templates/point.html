@@ -1,21 +1,39 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Пользователь</h1>
+<h1>Адреса точек</h1>
 <table>
     <tr>
-    <th>№ п/п</th>
-    <th>Имя</th>
-    <th>Фамилия</th>
-    <th>Логин</th>
-    <th>Почта</th>
+        <th>№ п/п</th>
+        <th>Наименование</th>
+        <th>GLN</th>
+        <th>ИНН</th>
+        <th>КПП</th>
+        <th>Индекс</th>
+        <th>Код региона</th>
+        <th>Район</th>
+        <th>Город</th>
+        <th>Населённый пункт</th>
+        <th>Улица</th>
+        <th>Дом</th>
+        <th>Корпус</th>
+        <th>Кварт</th>
     </tr>
     <tr>
-    <th>{{ item.id}}</th>
-    <th>{{ item.name}}</th>
-    <th>{{ item.surname}}</th>
-    <th>{{ item.login}}</th>
-    <th>{{ item.email}}</th>
+        <th>{{ item.id}}</th>
+        <th>{{ item.name}}</th>
+        <th>{{ item.gln}}</th>
+        <th>{{ item.inn}}</th>
+        <th>{{ item.kpp}}</th>
+        <th>{{ item.index}}</th>
+        <th>{{ item.region_code}}</th>
+        <th>{{ item.area}}</th>
+        <th>{{ item.city}}</th>
+        <th>{{ item.locality}}</th>
+        <th>{{ item.side}}</th>
+        <th>{{ item.house}}</th>
+        <th>{{ item.frame}}</th>
+        <th>{{ item.flat}}</th>
     </tr>
 </table>
 {% endblock %}
