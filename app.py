@@ -1,6 +1,7 @@
-from flask import Flask, render_template, request, flash, abort, redirect, jsonify
-from sqlalchemy.orm import scoped_session, sessionmaker
+from flask import Flask, render_template, request, flash, redirect
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import scoped_session, sessionmaker
+
 from config import engine
 
 app = Flask(__name__)
@@ -80,13 +81,23 @@ def contragents():
     return render_template('contragents.html', title="Контрагенты", items=Contragent.query.all())
 
 
-
-
-@app.route('/settings/point/<int:id>')
+@app.route('/settings/point/<int:id>', methods=["POST", "GET"])
 def point(id):
-    # Адрес точки
-    item = Point.query.get(id)
-    return render_template('point.html', title="Точка", item=item)
+    if request.method == "POST":
+        # for i in request.form.keys():
+
+        # session.query(Point).filter(Point.id == id).update({"name": request.form['name']}, synchronize_session=False)
+        # session.commit()
+        # session.query(Point).filter(Point.id == id).update(Point(**request.form))
+        # session.commit()
+        for i in request.form.keys():
+            print(i)
+            session.query(Point).filter(Point.id == id).update({i: request.form[i]}, synchronize_session=False)
+            session.commit()
+        # flash('адрес отредактирован')
+        # return redirect('/settings/points')
+        return redirect('/settings/points')
+    return render_template('point.html', title="Точка", item=Point.query.get(id))
 
 
 @app.route('/settings/points')

@@ -1,39 +1,73 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<ul>
+    <li><a href="/settings/profiles">Пользователи</a></li>
+    <li><a href="/settings/contragents">Контрагенты</a></li>
+    <li><a href="/settings/points">Адреса</a></li>
+    <li><a href="/settings/business_parameters">Бизнес-параметры</a></li>
+</ul>
+<hr>
 <h1>Адреса точек</h1>
-<table>
-    <tr>
-        <th>№ п/п</th>
-        <th>Наименование</th>
-        <th>GLN</th>
-        <th>ИНН</th>
-        <th>КПП</th>
-        <th>Индекс</th>
-        <th>Код региона</th>
-        <th>Район</th>
-        <th>Город</th>
-        <th>Населённый пункт</th>
-        <th>Улица</th>
-        <th>Дом</th>
-        <th>Корпус</th>
-        <th>Кварт</th>
-    </tr>
-    <tr>
-        <th>{{ item.id}}</th>
-        <th>{{ item.name}}</th>
-        <th>{{ item.gln}}</th>
-        <th>{{ item.inn}}</th>
-        <th>{{ item.kpp}}</th>
-        <th>{{ item.index}}</th>
-        <th>{{ item.region_code}}</th>
-        <th>{{ item.area}}</th>
-        <th>{{ item.city}}</th>
-        <th>{{ item.locality}}</th>
-        <th>{{ item.side}}</th>
-        <th>{{ item.house}}</th>
-        <th>{{ item.frame}}</th>
-        <th>{{ item.flat}}</th>
-    </tr>
-</table>
+<form action="/settings/point/{{ item.id}}" method="post">
+    <table>
+        <tr>
+            <th>Параметр</th>
+            <th>Данные</th>
+        </tr>
+        <tr>
+            <th>№ п/п</th>
+            <th>{{ item.id}}</th>
+        </tr>
+        <tr>
+            <th>Наименование</th>
+            <th><input name="name" requied type="text" value="{{ item.name}}"/></th>
+        </tr>
+        <tr>
+            <th>GLN</th>
+            <th><input name="gln" requied type="text" value="{{ item.gln}}"/></th>
+        </tr>
+        <tr>
+            <th>ИНН</th>
+            <th><input name="inn" requied type="text" value="{{ item.inn}}"/></th>
+        </tr>
+        <tr>
+            <th>КПП</th>
+            <th><input name="kpp" requied type="text" value="{{ item.kpp}}"/></th>
+        </tr>
+        <tr>
+            <th>Код региона</th>
+            <th><input name="region_code" requied type="text" value="{{ item.region_code}}"/></th>
+        </tr>
+        <tr>
+            <th>Район</th>
+            <th><input name="area" requied type="text" value="{{ item.area}}"/></th>
+        </tr>
+        <tr>
+            <th>Город</th>
+            <th><input name="city" requied type="text" value="{{ item.city}}"/></th>
+        </tr>
+        <tr>
+            <th>Населённый пункт</th>
+            <th><input name="locality" requied type="text" value="{{ item.locality}}"/></th>
+        </tr>
+        <tr>
+            <th>Улица</th>
+            <th><input name="side" requied type="text" value="{{ item.side}}"/></th>
+        </tr>
+        <tr>
+            <th>Дом</th>
+            <th><input name="house" requied type="text" value="{{ item.house}}"/></th>
+        </tr>
+        <tr>
+            <th>Корпус</th>
+            <th><input name="frame" requied type="text" value="{{ item.frame}}"/></th>
+        </tr>
+        <tr>
+            <th>Кварт</th>
+            <th><input name="flat" requied type="text" value="{{ item.flat}}"/></th>
+        </tr>
+    </table>
+    <p><input type="submit" value="Редактировать адрес"/>
+</form>
 {% endblock %}

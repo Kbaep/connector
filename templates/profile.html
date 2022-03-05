@@ -1,21 +1,20 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<ul>
+    <li><a href="/settings/profiles">Пользователи</a></li>
+    <li><a href="/settings/contragents">Контрагенты</a></li>
+    <li><a href="/settings/points">Адреса</a></li>
+    <li><a href="/settings/business_parameters">Бизнес-параметры</a></li>
+</ul>
+<hr>
 <h1>Пользователь</h1>
-<table>
-    <tr>
-    <th>№ п/п</th>
-    <th>Имя</th>
-    <th>Фамилия</th>
-    <th>Логин</th>
-    <th>Почта</th>
-    </tr>
-    <tr>
-    <th>{{ item.id}}</th>
-    <th>{{ item.name}}</th>
-    <th>{{ item.surname}}</th>
-    <th>{{ item.login}}</th>
-    <th>{{ item.email}}</th>
-    </tr>
-</table>
+<form action="/settings/create_profile" method="post">
+    <p><label>Имя: </label> <input type="text" name="name" value="" requied/>
+    <p><label>Фамилия: </label> <input type="text" name="surname" value="" requied/>
+    <p><label>Логин: </label> <input type="text" name="login" value="" requied/>
+    <p><label>Пароль: </label> <input type="password" name="password" value="" requied/>
+    <p><label>Почта: </label> <input type="email" name="email" value="" requied/>
+    <p><input type="submit" value="Создать пользователя"/>
+</form>
 {% endblock %}
