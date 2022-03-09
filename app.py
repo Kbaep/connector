@@ -53,7 +53,6 @@ def profiles():
 def create_profile():
     # Регистрация пользователя
     if request.method == "POST":
-        print(request.form)
         session.add(
             Profile(name=request.form['name'],
                     surname=request.form['surname'],
@@ -84,18 +83,10 @@ def contragents():
 @app.route('/settings/point/<int:id>', methods=["POST", "GET"])
 def point(id):
     if request.method == "POST":
-        # for i in request.form.keys():
-
-        # session.query(Point).filter(Point.id == id).update({"name": request.form['name']}, synchronize_session=False)
-        # session.commit()
-        # session.query(Point).filter(Point.id == id).update(Point(**request.form))
-        # session.commit()
-        for i in request.form.keys():
-            print(i)
-            session.query(Point).filter(Point.id == id).update({i: request.form[i]}, synchronize_session=False)
+        for details in request.form.keys():
+            session.query(Point).filter(Point.id == id).update({details: request.form[details]}, synchronize_session=False)
             session.commit()
-        # flash('адрес отредактирован')
-        # return redirect('/settings/points')
+        flash('адрес отредактирован')
         return redirect('/settings/points')
     return render_template('point.html', title="Точка", item=Point.query.get(id))
 
@@ -117,5 +108,8 @@ def create_point():
     return render_template('create_point.html', title="Создание точки")
 
 
+
+
 if __name__ == '__main__':
     app.run(debug=True)
+
